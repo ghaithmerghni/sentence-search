@@ -1,0 +1,32 @@
+ALGORITHM projet1algo
+VAR
+    length, words, vowels : INTEGER;
+    ch, prev_ch : CHARACTER;
+
+BEGIN
+    length = 0;
+    words = 0;
+    vowels = 0;
+    prev_ch = " ";
+
+    read(ch);
+
+    WHILE (ch != ".") DO
+        length = length + 1;
+
+        IF (ch IN ["a","e","i","o","u","A","E","I","O","U"]) THEN
+            vowels = vowels + 1;
+        ENDIF
+
+        IF (ch != " " AND prev_ch = " ") THEN
+            words = words + 1;
+        ENDIF
+
+        prev_ch = ch;
+        read(ch);
+    ENDWHILE
+
+    write("Length = ", length);
+    write("Words = ", words);
+    write("Vowels = ", vowels);
+END
